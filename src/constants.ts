@@ -77,6 +77,18 @@ export const PROJECTS = [
     problem: "Users were struggling to manage multiple AI tools for different tasks (text, image, code), leading to a fragmented workflow.",
     solution: "Unified the AI experience into a single, high-performance platform that leverages the Gemini API for multi-modal task completion and automation.",
     features: ["Multi-modal AI chat", "Image generation & analysis", "Code automation", "Context-aware task management"]
+  },
+  {
+    id: 6,
+    title: "Elite AI Cinematic Studio",
+    description: "A high-end platform for generating production-quality AI animations and cinematic video content.",
+    tech: ["Stable Diffusion", "Runway Gen-2", "Pika Labs", "After Effects"],
+    link: "https://github.com/titilayoafolabi999-ctrl",
+    category: "AI Projects",
+    image: "https://picsum.photos/seed/ai-video/800/600",
+    problem: "Traditional video production is expensive and time-consuming, making high-quality cinematic content inaccessible for many creators.",
+    solution: "Leveraged advanced video-to-video and text-to-video AI models to create a streamlined pipeline for cinematic storytelling and commercial animation.",
+    features: ["Text-to-Video Synthesis", "AI Character Consistency", "Neural Style Transfer", "Lip-Sync & Voice Cloning"]
   }
 ];
 
@@ -175,8 +187,10 @@ export const SKILLS = [
     category: "Design & Animation",
     items: [
       { name: "Figma", level: 95 },
+      { name: "Text-to-Video Synthesis", level: 92 },
+      { name: "AI Character Consistency", level: 88 },
+      { name: "Neural Style Transfer", level: 85 },
       { name: "AI Animation (SD/Runway)", level: 90 },
-      { name: "Graphic Design", level: 92 },
       { name: "Motion Graphics", level: 88 },
       { name: "SVG Mastery", level: 81 }
     ]
