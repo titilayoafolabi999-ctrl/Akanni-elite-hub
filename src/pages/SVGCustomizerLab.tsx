@@ -12,7 +12,7 @@ export default function SVGCustomizerLab() {
   const [size, setSize] = useState(200);
   const [strokeWidth, setStrokeWidth] = useState(2);
   const [copied, setCopied] = useState(false);
-  
+
   const selectedSVG = SVG_DATA.find(s => s.id === selectedId) || SVG_DATA[0];
   const svgRef = useRef<HTMLDivElement>(null);
 
@@ -24,7 +24,7 @@ export default function SVGCustomizerLab() {
     const clonedSvg = svgElement.cloneNode(true) as SVGSVGElement;
     clonedSvg.setAttribute("width", size.toString());
     clonedSvg.setAttribute("height", size.toString());
-    
+
     const svgData = new XMLSerializer().serializeToString(clonedSvg);
     const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
     const svgUrl = URL.createObjectURL(svgBlob);
@@ -41,7 +41,7 @@ export default function SVGCustomizerLab() {
     if (!svgRef.current) return;
     const svgElement = svgRef.current.querySelector('svg');
     if (!svgElement) return;
-    
+
     const svgData = new XMLSerializer().serializeToString(svgElement);
     navigator.clipboard.writeText(svgData);
     setCopied(true);
@@ -58,7 +58,7 @@ export default function SVGCustomizerLab() {
         </Button>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Left: Controls */}
+
           <div className="w-full lg:w-1/3 space-y-8">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-6">
@@ -106,9 +106,9 @@ export default function SVGCustomizerLab() {
                       style={{ backgroundColor: c }}
                     />
                   ))}
-                  <input 
-                    type="color" 
-                    value={color} 
+                  <input
+                    type="color"
+                    value={color}
                     onChange={(e) => setColor(e.target.value)}
                     className="w-8 h-8 rounded-full bg-transparent border-none cursor-pointer"
                   />
@@ -120,11 +120,11 @@ export default function SVGCustomizerLab() {
                   <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Preview Size</label>
                   <span className="text-[10px] font-mono text-primary">{size}px</span>
                 </div>
-                <Slider 
-                  value={[size]} 
-                  onValueChange={(val) => setSize(val[0])} 
-                  min={100} 
-                  max={400} 
+                <Slider
+                  value={[size]}
+                  onValueChange={(val) => setSize(val[0])}
+                  min={100}
+                  max={400}
                   step={10}
                   className="py-4"
                 />
@@ -142,12 +142,12 @@ export default function SVGCustomizerLab() {
             </div>
           </div>
 
-          {/* Right: Preview Area */}
+
           <div className="w-full lg:w-2/3 flex flex-col">
             <div className="flex-1 glass rounded-3xl border-white/10 flex items-center justify-center relative overflow-hidden min-h-[400px] md:min-h-[600px]">
-              {/* Background Grid */}
+
               <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]" />
-              
+
               <motion.div
                 key={selectedId + color + size}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -163,7 +163,7 @@ export default function SVGCustomizerLab() {
                 <div className="px-4 py-2 glass rounded-full text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
                   <Maximize className="w-3 h-3" /> {size}x{size}
                 </div>
-                <button 
+                <button
                   onClick={() => {
                     setColor("#fbbf24");
                     setSize(200);
@@ -174,11 +174,11 @@ export default function SVGCustomizerLab() {
                 </button>
               </div>
             </div>
-            
+
             <div className="mt-8 p-6 glass rounded-2xl border-white/5">
               <h4 className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Elite Implementation Tip</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                To use this SVG in your React project, simply copy the code and wrap it in a component. 
+                To use this SVG in your React project, simply copy the code and wrap it in a component.
                 Use <code className="text-primary bg-primary/10 px-1 rounded">currentColor</code> for the stroke or fill attributes to make the asset respond to your CSS text color.
               </p>
             </div>

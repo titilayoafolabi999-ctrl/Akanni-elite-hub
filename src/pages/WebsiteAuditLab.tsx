@@ -37,7 +37,7 @@ export default function WebsiteAuditLab() {
     setTimeout(() => {
       const isElite = url.includes("ais-dev") || url.includes("ais-pre") || url.includes("localhost") || url.includes("akanni");
       const seed = url.length;
-      
+
       const mockResults = {
         url: url,
         performance: isElite ? 98 : Math.floor((Math.sin(seed) * 10) + 85),
@@ -95,8 +95,8 @@ export default function WebsiteAuditLab() {
           <form onSubmit={handleAudit} className="flex flex-col md:flex-row gap-4">
             <div className="relative flex-1">
               <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <Input 
-                placeholder="https://yourwebsite.com" 
+              <Input
+                placeholder="https://yourwebsite.com"
                 className="pl-12 h-14 bg-white/5 border-white/10 rounded-xl focus:neon-border transition-all"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
@@ -111,7 +111,7 @@ export default function WebsiteAuditLab() {
 
         <AnimatePresence>
           {isAnalyzing && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}

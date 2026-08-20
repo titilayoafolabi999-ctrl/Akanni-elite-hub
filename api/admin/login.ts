@@ -6,7 +6,6 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const { password } = req.body;
-  // Password from constants.ts is "AkanniElite2026!"
   if (password === "AkanniElite2026!") {
     return res.json({ success: true, token: "elite_session_token_2026" });
   } else {

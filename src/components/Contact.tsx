@@ -15,16 +15,14 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      // 1. Save to Local Storage as a backup (useful for Netlify/Vercel testing)
       const localLeads = JSON.parse(localStorage.getItem("local_leads") || "[]");
       const newLead = { ...formData, timestamp: new Date().toISOString() };
       localStorage.setItem("local_leads", JSON.stringify([newLead, ...localLeads]));
 
-      // 2. Attempt to send to external backend
       const targetUrl = GOOGLE_SHEETS_URL || "/api/contact";
-      
+
       if (GOOGLE_SHEETS_URL || targetUrl.startsWith("/api")) {
         const response = await fetch(targetUrl, {
           method: "POST",
@@ -32,13 +30,12 @@ export default function Contact() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
-        
+
         if (GOOGLE_SHEETS_URL || response.ok) {
           setIsSubmitted(true);
           setFormData({ name: "", email: "", message: "" });
         }
       } else {
-        // If no backend is configured, we still show success because we saved to local storage
         setIsSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
       }
@@ -66,8 +63,8 @@ export default function Contact() {
             <div>
               <h3 className="text-3xl font-bold mb-6">Ready to start your next <span className="text-primary">Elite Project?</span></h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                I'm currently available for freelance work and collaborations. 
-                Whether you have a specific project in mind or just want to chat 
+                I'm currently available for freelance work and collaborations.
+                Whether you have a specific project in mind or just want to chat
                 about AI and design, I'd love to hear from you.
               </p>
             </div>
@@ -133,8 +130,8 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Name</label>
-                    <Input 
-                      placeholder="John Doe" 
+                    <Input
+                      placeholder="John Doe"
                       className="bg-white/5 border-white/10 h-12 rounded-xl focus:neon-border transition-all"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -143,9 +140,9 @@ export default function Contact() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Email</label>
-                    <Input 
-                      type="email" 
-                      placeholder="john@example.com" 
+                    <Input
+                      type="email"
+                      placeholder="john@example.com"
                       className="bg-white/5 border-white/10 h-12 rounded-xl focus:neon-border transition-all"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -155,8 +152,8 @@ export default function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Project Description</label>
-                  <Textarea 
-                    placeholder="Tell me about your project..." 
+                  <Textarea
+                    placeholder="Tell me about your project..."
                     className="bg-white/5 border-white/10 min-h-[150px] rounded-xl focus:neon-border transition-all resize-none"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}

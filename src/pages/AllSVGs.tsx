@@ -58,7 +58,7 @@ export default function AllSVGs() {
               className="aspect-square glass rounded-2xl p-6 flex flex-col items-center justify-center group hover:neon-border transition-all relative overflow-hidden"
             >
               <div className="w-full h-full text-primary group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
-                <div 
+                <div
                   ref={(el) => {
                     if (el) {
                       const svgChild = el.querySelector('svg');
@@ -70,14 +70,14 @@ export default function AllSVGs() {
                   {svg.component}
                 </div>
               </div>
-              
+
               <div className="absolute inset-0 bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 text-center">
                 <span className="text-xs font-bold uppercase tracking-widest text-primary mb-4">
                   {svg.title}
                 </span>
-                <Button 
-                  size="sm" 
-                  variant="ghost" 
+                <Button
+                  size="sm"
+                  variant="ghost"
                   className="rounded-full hover:bg-primary hover:text-black transition-colors"
                   onClick={() => downloadSVG(svg.id, svg.title)}
                 >

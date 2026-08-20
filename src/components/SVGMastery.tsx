@@ -11,11 +11,11 @@ export default function SVGMastery() {
   return (
     <section id="svg-mastery" className="py-24 bg-white/[0.02]">
       <div className="container px-6 mx-auto">
-        <SectionHeader 
-          title="SVG Mastery" 
-          subtitle="Digital Craftsmanship" 
+        <SectionHeader
+          title="SVG Mastery"
+          subtitle="Digital Craftsmanship"
         />
-        
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
           {previewSVGs.map((svg, i) => (
             <motion.div

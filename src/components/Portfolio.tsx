@@ -21,7 +21,7 @@ export default function Portfolio() {
       <div className="container px-6 mx-auto">
         <SectionHeader title="Featured Works" subtitle="Portfolio" />
 
-        {/* Filter Tabs */}
+
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {CATEGORIES.map((cat) => (
             <button
@@ -38,7 +38,7 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Project Grid */}
+
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (

@@ -9,9 +9,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
   const { name, email, message } = req.body;
   const timestamp = new Date().toISOString();
-  
-  // NOTE: Local file storage (leads.json) will NOT persist on Vercel/Netlify.
-  // For production, you should connect this to a database like Firebase or Supabase.
+
   try {
     const leadsFile = path.join(process.cwd(), "leads.json");
     let leads = [];
@@ -24,8 +22,8 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     console.error("Storage error (expected on serverless):", err);
   }
 
-  return res.json({ 
-    success: true, 
-    message: "Lead collected successfully. Akanni will get back to you soon!" 
+  return res.json({
+    success: true,
+    message: "Lead collected successfully. Akanni will get back to you soon!"
   });
 }

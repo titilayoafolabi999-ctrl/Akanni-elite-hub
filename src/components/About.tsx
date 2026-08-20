@@ -19,10 +19,9 @@ export default function About() {
           >
             <div className="aspect-square rounded-3xl overflow-hidden neon-border">
               <img
-                src="https://picsum.photos/seed/creator/800/800"
+                src="/assets/creator-portrait.jpg"
                 alt="Creator"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                referrerPolicy="no-referrer"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 glass p-8 rounded-2xl hidden md:block">

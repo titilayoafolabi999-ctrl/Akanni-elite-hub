@@ -2,12 +2,12 @@ import { motion } from "motion/react";
 import SectionHeader from "./SectionHeader";
 
 const GALLERY_ITEMS = [
-  { id: 1, type: "AI Animation", image: "https://picsum.photos/seed/ai-motion-1/800/800" },
-  { id: 2, type: "Digital Human", image: "https://picsum.photos/seed/human-ai/800/1000" },
-  { id: 3, type: "Cyber Landscape", image: "https://picsum.photos/seed/cyber-city/800/600" },
-  { id: 4, type: "UI Motion", image: "https://picsum.photos/seed/ui-anim/800/600" },
-  { id: 5, type: "Neural Art", image: "https://picsum.photos/seed/neural/800/800" },
-  { id: 6, type: "Tech Portrait", image: "https://picsum.photos/seed/tech-face/800/1000" },
+  { id: 1, type: "AI Animation", image: "/assets/gallery-ai-animation.jpg" },
+  { id: 2, type: "Digital Human", image: "/assets/gallery-digital-human.jpg" },
+  { id: 3, type: "Cyber Landscape", image: "/assets/gallery-cyber-landscape.jpg" },
+  { id: 4, type: "UI Motion", image: "/assets/gallery-ui-motion.jpg" },
+  { id: 5, type: "Neural Art", image: "/assets/gallery-neural-art.jpg" },
+  { id: 6, type: "Tech Portrait", image: "/assets/gallery-tech-portrait.jpg" },
 ];
 
 export default function Gallery() {

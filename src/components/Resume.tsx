@@ -11,7 +11,7 @@ export default function Resume() {
         <SectionHeader title="Professional Journey" subtitle="Resume" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Experience */}
+
           <div className="space-y-8">
             <h3 className="text-2xl font-bold flex items-center gap-3">
               <Briefcase className="text-primary" />
@@ -39,7 +39,7 @@ export default function Resume() {
             </div>
           </div>
 
-          {/* Education */}
+
           <div className="space-y-8">
             <h3 className="text-2xl font-bold flex items-center gap-3">
               <GraduationCap className="text-secondary" />
@@ -69,7 +69,7 @@ export default function Resume() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
-          {/* Achievements */}
+
           <div className="space-y-8">
             <h3 className="text-2xl font-bold flex items-center gap-3">
               <Trophy className="text-primary" />
@@ -87,7 +87,7 @@ export default function Resume() {
             </Card>
           </div>
 
-          {/* Interests */}
+
           <div className="space-y-8">
             <h3 className="text-2xl font-bold flex items-center gap-3">
               <Heart className="text-secondary" />

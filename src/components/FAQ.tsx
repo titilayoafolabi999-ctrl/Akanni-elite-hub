@@ -22,7 +22,7 @@ export default function FAQ() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <Card 
+              <Card
                 className={`overflow-hidden glass border-white/5 transition-all duration-300 ${
                   openIndex === i ? "neon-border bg-white/5" : "hover:bg-white/5"
                 }`}
@@ -40,7 +40,7 @@ export default function FAQ() {
                     )}
                   </div>
                 </button>
-                
+
                 <AnimatePresence>
                   {openIndex === i && (
                     <motion.div

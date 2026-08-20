@@ -27,7 +27,7 @@ export default function Services() {
                     Most Popular
                   </div>
                 )}
-                
+
                 <div className="mb-8">
                   <div className="text-xs font-bold uppercase tracking-widest text-primary mb-2">{service.package}</div>
                   <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
@@ -57,7 +57,7 @@ export default function Services() {
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </a>
                   </Button>
-                  
+
                   {service.title === "Website Auditing" && (
                     <Button variant="outline" className="w-full rounded-xl h-12 glass" asChild>
                       <Link to="/website-audit-lab">

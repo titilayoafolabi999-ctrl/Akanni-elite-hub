@@ -22,7 +22,7 @@ export default function Skills() {
                 <span className="w-8 h-[1px] bg-primary" />
                 {group.category}
               </h3>
-              
+
               <div className="space-y-6">
                 {group.items.map((skill, skillIdx) => (
                   <div key={skillIdx} className="space-y-2">
@@ -46,7 +46,7 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Tools Marquee Placeholder */}
+
         <div className="mt-24 pt-12 border-t border-white/5">
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
             {["GitHub", "Figma", "Kaggle", "VS Code", "Python", "Docker"].map((tool) => (

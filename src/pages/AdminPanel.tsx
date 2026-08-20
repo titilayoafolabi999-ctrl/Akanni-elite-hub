@@ -22,20 +22,18 @@ export default function AdminPanel() {
   const fetchLeads = async () => {
     setIsLoading(true);
     const token = localStorage.getItem("admin_token");
-    
+
     if (!token) {
       window.location.href = "/admin/auth";
       return;
     }
 
     try {
-      // 1. Get Local Leads
       const localLeads = JSON.parse(localStorage.getItem("local_leads") || "[]").map((l: any) => ({ ...l, source: "Local" }));
 
-      // 2. Get Remote Leads
       let remoteLeads = [];
       const targetUrl = GOOGLE_SHEETS_URL || "/api/admin/leads";
-      
+
       if (GOOGLE_SHEETS_URL || targetUrl.startsWith("/api")) {
         const response = await fetch(targetUrl, {
           headers: GOOGLE_SHEETS_URL ? {} : { "Authorization": `Bearer ${token}` }
@@ -51,13 +49,11 @@ export default function AdminPanel() {
         remoteLeads = (data.leads || []).map((l: any) => ({ ...l, source: "Cloud" }));
       }
 
-      // 3. Merge and Sort (Newest first)
-      const allLeads = [...remoteLeads, ...localLeads].sort((a, b) => 
+      const allLeads = [...remoteLeads, ...localLeads].sort((a, b) =>
         new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
       );
 
-      // Remove duplicates based on email and timestamp if necessary
-      const uniqueLeads = allLeads.filter((v, i, a) => 
+      const uniqueLeads = allLeads.filter((v, i, a) =>
         a.findIndex(t => t.timestamp === v.timestamp && t.email === v.email) === i
       );
 
@@ -87,10 +83,10 @@ export default function AdminPanel() {
   };
 
   const downloadLeads = () => {
-    const csvContent = "data:text/csv;charset=utf-8," 
+    const csvContent = "data:text/csv;charset=utf-8,"
       + "Timestamp,Name,Email,Message\n"
       + leads.map(l => `"${l.timestamp}","${l.name}","${l.email}","${l.message}"`).join("\n");
-    
+
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);

@@ -40,7 +40,7 @@ export default function ProjectCaseStudy() {
               Back to Portfolio
             </Link>
           </Button>
-          
+
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
             <div>
               <span className="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">
@@ -59,9 +59,9 @@ export default function ProjectCaseStudy() {
           </div>
 
           <div className="aspect-video rounded-3xl overflow-hidden mb-16 neon-border">
-            <img 
-              src={project.image} 
-              alt={project.title} 
+            <img
+              src={project.image}
+              alt={project.title}
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -112,8 +112,8 @@ export default function ProjectCaseStudy() {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((t) => (
-                    <span 
-                      key={t} 
+                    <span
+                      key={t}
                       className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium border border-white/10"
                     >
                       {t}

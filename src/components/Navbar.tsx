@@ -46,7 +46,7 @@ export default function Navbar() {
           {SITE_NAME.split(' ')[0]}<span className="text-primary">{SITE_NAME.split(' ').slice(1).join(' ')}</span>
         </motion.a>
 
-        {/* Desktop Nav */}
+
         <div className="hidden md:flex items-center gap-4 lg:gap-8">
           {NAV_LINKS.map((link) => (
             <a
@@ -62,7 +62,7 @@ export default function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Toggle */}
+
         <button
           className="md:hidden text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -71,7 +71,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div

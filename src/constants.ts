@@ -4,8 +4,8 @@ export const SITE_NAME = "Akanni's Elite Hub";
 export const EMAIL = "shonibareakanni09@gmail.com";
 export const PHONE = "+234 708 436 2145";
 export const LOCATION = "Lagos, Nigeria";
-export const CV_URL = "#"; 
-export const ADMIN_PASSWORD = "AkanniElite2026!"; // Hard to guess, easy to remember
+export const CV_URL = "#";
+export const ADMIN_PASSWORD = "AkanniElite2026!";
 export const GOOGLE_SHEETS_URL = import.meta.env.VITE_GOOGLE_SHEETS_URL || "";
 export const GOOGLE_SHEET_ID = import.meta.env.VITE_GOOGLE_SHEET_ID || "";
 export const GOOGLE_SHEET_NAME = import.meta.env.VITE_GOOGLE_SHEET_NAME || "Sheet1";
@@ -25,7 +25,7 @@ export const PROJECTS = [
     tech: ["React", "AI Integration", "Vercel", "Tailwind CSS"],
     link: "https://quiz-mark-proxy.vercel.app/",
     category: "AI Projects",
-    image: "https://picsum.photos/seed/quiz-ai/800/600",
+    image: "/assets/project-quiz-mark-proxy.jpg",
     problem: "Educators and students needed a more streamlined way to manage and validate quiz results while preventing common forms of academic dishonesty in a remote environment.",
     solution: "Developed an AI-powered proxy system that uses real-time monitoring and pattern recognition to ensure the integrity of quiz submissions, while providing a seamless UI for both teachers and students.",
     features: ["Real-time AI monitoring", "Automated grading system", "Secure proxy architecture", "Advanced analytics dashboard"]
@@ -37,7 +37,7 @@ export const PROJECTS = [
     tech: ["Blockchain", "AI", "Decentralized Systems", "Solidity"],
     link: "https://decentralized-ai-validator-dav.vercel.app/",
     category: "AI Projects",
-    image: "https://picsum.photos/seed/blockchain-ai/800/600",
+    image: "/assets/project-validator.jpg",
     problem: "AI models are often 'black boxes' with no verifiable way to ensure they haven't been tampered with or that the data they were trained on is high quality.",
     solution: "Built a decentralized validation layer using blockchain technology to create an immutable audit trail for AI model performance and training data verification.",
     features: ["Immutable audit logs", "Consensus-based validation", "Smart contract integration", "Model performance tracking"]
@@ -49,7 +49,7 @@ export const PROJECTS = [
     tech: ["Automation", "Node.js", "GitHub", "Express"],
     link: "https://github.com/titilayoafolabi999-ctrl/GiftAxisLabs-MD",
     category: "Web Design Projects",
-    image: "https://picsum.photos/seed/automation-lab/800/600",
+    image: "/assets/project-automation-lab.jpg",
     problem: "Laboratory workflows were heavily manual, leading to data entry errors and slow processing times for critical research data.",
     solution: "Created a robust automation framework that handles data ingestion, processing, and reporting automatically, reducing manual labor by 70%.",
     features: ["Automated data ingestion", "Custom workflow engine", "Real-time reporting", "Secure data storage"]
@@ -61,7 +61,7 @@ export const PROJECTS = [
     tech: ["Python", "Telegram API", "Automation", "Redis"],
     link: "https://github.com/titilayoafolabi999-ctrl/Telegram_bot",
     category: "AI Projects",
-    image: "https://picsum.photos/seed/bot-telegram/800/600",
+    image: "/assets/project-telegram-bot.jpg",
     problem: "Businesses needed a way to provide 24/7 customer support and automated services without the high cost of a dedicated support team.",
     solution: "Designed a scalable bot system using the Telegram API that handles complex user queries and automates common business tasks through a conversational interface.",
     features: ["Natural Language Processing", "Automated ticketing system", "Multi-user support", "Real-time notifications"]
@@ -73,7 +73,7 @@ export const PROJECTS = [
     tech: ["React", "Tailwind", "Gemini API", "Firebase"],
     link: "https://omni-ai-v2.vercel.app/",
     category: "AI Projects",
-    image: "https://picsum.photos/seed/omni-v2/800/600",
+    image: "/assets/project-omni-ai.jpg",
     problem: "Users were struggling to manage multiple AI tools for different tasks (text, image, code), leading to a fragmented workflow.",
     solution: "Unified the AI experience into a single, high-performance platform that leverages the Gemini API for multi-modal task completion and automation.",
     features: ["Multi-modal AI chat", "Image generation & analysis", "Code automation", "Context-aware task management"]
@@ -85,7 +85,7 @@ export const PROJECTS = [
     tech: ["Stable Diffusion", "Runway Gen-2", "Pika Labs", "After Effects"],
     link: "https://github.com/titilayoafolabi999-ctrl",
     category: "AI Projects",
-    image: "https://picsum.photos/seed/ai-video/800/600",
+    image: "/assets/project-cinematic-studio.jpg",
     problem: "Traditional video production is expensive and time-consuming, making high-quality cinematic content inaccessible for many creators.",
     solution: "Leveraged advanced video-to-video and text-to-video AI models to create a streamlined pipeline for cinematic storytelling and commercial animation.",
     features: ["Text-to-Video Synthesis", "AI Character Consistency", "Neural Style Transfer", "Lip-Sync & Voice Cloning"]

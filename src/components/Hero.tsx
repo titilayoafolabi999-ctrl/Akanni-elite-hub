@@ -6,7 +6,7 @@ import { CV_URL, LOCATION, PHONE, NAME } from "@/src/constants";
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background Elements */}
+
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] animate-pulse delay-700" />
@@ -47,8 +47,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed"
         >
-          I help businesses scale by integrating cutting-edge AI automation, 
-          high-performance web design, and robust cybersecurity audits. 
+          I help businesses scale by integrating cutting-edge AI automation,
+          high-performance web design, and robust cybersecurity audits.
           Your vision, engineered for the elite.
         </motion.p>
 
@@ -73,7 +73,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Floating Hire Me Button */}
+
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}

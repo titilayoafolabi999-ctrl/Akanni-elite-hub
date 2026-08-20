@@ -3,7 +3,7 @@ import { NAME, GITHUB_URL, EMAIL, PHONE } from "@/src/constants";
 
 export default function Footer() {
   const whatsappNumber = PHONE.replace(/\s+/g, '').replace('+', '');
-  
+
   return (
     <footer className="py-12 border-t border-white/5">
       <div className="container px-6 mx-auto">

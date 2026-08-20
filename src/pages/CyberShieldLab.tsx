@@ -66,7 +66,7 @@ export default function CyberShieldLab() {
           </p>
         </div>
 
-        {/* Module Selection */}
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {[
             { id: "web", label: "Web Infra", icon: Globe },
@@ -78,8 +78,8 @@ export default function CyberShieldLab() {
               key={mod.id}
               onClick={() => { setActiveModule(mod.id as any); setResults(null); }}
               className={`p-6 rounded-2xl border transition-all flex flex-col items-center gap-3 ${
-                activeModule === mod.id 
-                ? "bg-primary/10 border-primary text-primary shadow-[0_0_20px_rgba(251,191,36,0.1)]" 
+                activeModule === mod.id
+                ? "bg-primary/10 border-primary text-primary shadow-[0_0_20px_rgba(251,191,36,0.1)]"
                 : "bg-white/5 border-white/10 text-muted-foreground hover:bg-white/10"
               }`}
             >
@@ -98,8 +98,8 @@ export default function CyberShieldLab() {
                     <Globe className="text-primary w-5 h-5" /> Web Infrastructure Scan
                   </h3>
                   <form onSubmit={handleWebScan} className="flex gap-4">
-                    <Input 
-                      placeholder="https://target-domain.com" 
+                    <Input
+                      placeholder="https://target-domain.com"
                       className="h-14 bg-white/5 border-white/10 rounded-xl"
                       value={url}
                       onChange={(e) => setUrl(e.target.value)}

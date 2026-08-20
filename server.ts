@@ -13,15 +13,12 @@ async function startServer() {
 
   app.use(express.json());
 
-  // Lead collection API
   app.post("/api/contact", (req, res) => {
     const { name, email, message } = req.body;
     const timestamp = new Date().toISOString();
-    
-    // In a real app, you'd save this to a database
+
     console.log("New Lead Received:", { name, email, message, timestamp });
-    
-    // Save to a JSON file for easier parsing by the admin panel
+
     const leadsFile = path.join(__dirname, "leads.json");
     let leads = [];
     if (fs.existsSync(leadsFile)) {
@@ -30,16 +27,14 @@ async function startServer() {
     leads.push({ name, email, message, timestamp });
     fs.writeFileSync(leadsFile, JSON.stringify(leads, null, 2));
 
-    res.json({ 
-      success: true, 
-      message: "Lead collected successfully. Akanni will get back to you soon!" 
+    res.json({
+      success: true,
+      message: "Lead collected successfully. Akanni will get back to you soon!"
     });
   });
 
-  // Admin Login
   app.post("/api/admin/login", (req, res) => {
     const { password } = req.body;
-    // Password from constants.ts is "AkanniElite2026!"
     if (password === "AkanniElite2026!") {
       res.json({ success: true, token: "elite_session_token_2026" });
     } else {
@@ -47,7 +42,6 @@ async function startServer() {
     }
   });
 
-  // Get Leads (Protected)
   app.get("/api/admin/leads", (req, res) => {
     const authHeader = req.headers.authorization;
     if (authHeader === "Bearer elite_session_token_2026") {
@@ -62,7 +56,6 @@ async function startServer() {
     }
   });
 
-  // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },

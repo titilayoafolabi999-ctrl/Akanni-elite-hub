@@ -4,7 +4,7 @@ import path from 'path';
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
   const authHeader = req.headers.authorization;
-  
+
   if (authHeader === "Bearer elite_session_token_2026") {
     try {
       const leadsFile = path.join(process.cwd(), "leads.json");

@@ -19,8 +19,6 @@ export default function Stats() {
     const checkStatus = async (url: string) => {
       setStatuses(prev => ({ ...prev, [url]: "checking" }));
       try {
-        // Using a simple fetch with mode: 'no-cors' to check if the server is reachable
-        // Note: 'no-cors' won't let us see the status code, but it will throw if the network is unreachable
         await fetch(url, { mode: 'no-cors', cache: 'no-cache' });
         setStatuses(prev => ({ ...prev, [url]: "online" }));
       } catch (error) {
@@ -52,7 +50,7 @@ export default function Stats() {
           ))}
         </div>
 
-        {/* Network Status / Ping Section */}
+
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 glass border-white/5">
             <div className="flex items-center gap-3 mb-8">

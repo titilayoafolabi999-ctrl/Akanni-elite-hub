@@ -62,9 +62,9 @@ export default function AdminAuth() {
                 <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Access Key</label>
                 <div className="relative">
                   <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <Input 
+                  <Input
                     type="password"
-                    placeholder="••••••••••••" 
+                    placeholder="••••••••••••"
                     className="pl-12 h-12 bg-white/5 border-white/10 rounded-xl focus:neon-border transition-all"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}

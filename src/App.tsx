@@ -24,7 +24,6 @@ import ProjectCaseStudy from "./pages/ProjectCaseStudy";
 
 export default function App() {
   useEffect(() => {
-    // Trigger a visit ping to the local /ping.json
     fetch("/ping.json").catch(() => {});
   }, []);
 
